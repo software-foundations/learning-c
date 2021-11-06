@@ -10,7 +10,9 @@ int main(void) {
   }
 
   if (0) {
-    printf("0\n");
+    printf("if 0 -> true\n");
+  } else {
+    printf("if 0 -> false\n");
   }
 
   if (0.5) {

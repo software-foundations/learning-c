@@ -2,24 +2,26 @@
 
 int main(void) {
   int a;
-  int b;
-  int sum_ab;
-  int diff_ab;
-  int prod_ab;
-  float division_ab;
+  float b;
+  int c = 3;
+  float d = 4;
+  float result_float;
+  int result_int;
 
   printf("a: ");
   scanf("%d", &a);
 
   printf("b: ");
-  scanf("%d", &b);
+  scanf("%f", &b);
 
-  sum_ab = a + b;
-  diff_ab = a - b;
-  prod_ab = a * b;
-  division_ab = a / b;
+  result_float = a + b;
+  printf("a + b: %f\n", result_float);
 
-  printf("sum: %d\nsubtraction: %d\nproduct: %d\ndivision: %f", sum_ab, diff_ab,
-         prod_ab, division_ab);
+  result_int = a + c;
+  printf("a + c: %d\n", result_int);
+
+  result_float = c + d;
+  printf("c + d: %f\n", result_float);
+
   return 0;
 }

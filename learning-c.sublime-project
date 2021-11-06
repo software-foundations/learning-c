@@ -1,0 +1,94 @@
+{
+	"build_systems":
+	[
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "clang-format",
+			"selector": "source.shell",
+			"shell_cmd": "clang-format \"$file\" > temp_file.c && cat temp_file.c > $file && rm temp_file.c",
+
+		},
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "gcc compile",
+			"selector": "source.gcc",
+			"shell_cmd": "\"gcc\" -o \"${file_base_name}\" \"$file\"",
+		},
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "run",			
+			"shell_cmd": "\"./${file_base_name}\"",
+		},
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "make",
+			"selector": "source.make",
+			"shell_cmd": " \"rm ${file_base_name}\" && \"make ${file_base_name}\"",
+		},
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "gcc compile, run and rm compiled file",
+			"selector": "source.make",
+			"shell_cmd": "gcc -o \"${file_base_name}\" \"$file\" && \"./${file_base_name}\" && rm \"${file_base_name}\"",
+		},
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "format -> compile -> run",
+			"selector": "source.make",
+			"shell_cmd": "clang-format \"$file\" > temp_file.c && cat temp_file.c > $file && rm temp_file.c && gcc -o \"${file_base_name}\" \"$file\" && \"./${file_base_name}\" && rm \"${file_base_name}\"",
+		},
+		{
+			"auto_close": false,
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"focus": true,
+			"name": "learning-c terminal",
+			"post_window_hooks":
+			[
+				[
+					"carry_file_to_pane",
+					{
+						"direction": "right",
+					}
+				]
+			],
+			"selector": "source.gcc",
+			"shell_cmd": "gcc -o \"${file_base_name}\" \"$file\" && \"./${file_base_name}\" && rm \"${file_base_name}\"",
+			"target": "terminus_open",
+			"timeit": true,
+			"title": "learning-c: terminal",
+			"variants":
+			[
+				{
+					"name": "gcc compile",
+					"shell_cmd": "\"gcc\" -o \"${file_base_name}\" \"$file\"",
+				},
+				{
+					"name": "run",
+					"shell_cmd": "\"./${file_base_name}\"",
+				},
+				{					
+					"name": "format -> compile -> run (terminal)",
+					"shell_cmd": "clang-format \"$file\" > temp_file.c && cat temp_file.c > $file && rm temp_file.c && gcc -o \"${file_base_name}\" \"$file\" && \"./${file_base_name}\" && rm \"${file_base_name}\"",
+				},
+			],
+			"working_dir": "$file_path",
+		}	
+	],
+	
+	"folders":
+	[
+		{
+			"path": "/home/bruno/Documents/dev/software-fundamentals/learning-c",
+		}
+	],
+
+	"settings":
+	{
+		// "tab_completion": true,
+		"auto_complete": false,
+	    "ClangFormat":
+	    {
+			"format_on_save": true,
+		}
+	},
+}

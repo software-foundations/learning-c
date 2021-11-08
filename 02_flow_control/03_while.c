@@ -8,7 +8,7 @@ int main(void) {
   int k = -1;
   int l = 10;
 
-  // counter-controleld repetition
+  // counter-controled repetition
 
   while (i < 10) {
     printf("%d\n", i);

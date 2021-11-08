@@ -2,10 +2,20 @@
 #include <stdlib.h>
 
 int main(void) {
-  printf("%d\n", 1);
-  printf("%f\n", 1.0);
-  printf("%.2f\n", 1.0);
-  printf("%s\n", "string");
+  int var_int = 0;
+  double var_double = 4.2;
+  float var_float = .846;
+  char var_char_3[3] = "one";
+  char var_char_4[4] = "zero";
+
+  printf("%d\n", var_int);
+  printf("%f\n", var_float);
+  printf("%.2f\n", var_float);
+  printf("%s\n", var_char_3);
+  printf("%s\n", var_char_4);
+  printf("%f\n", var_float);
+  printf("%.3f\n", var_float);
+  printf("%.2lf\n", var_float);
 
   return 0;
 }

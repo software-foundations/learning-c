@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int line_break() { printf("---------\n"); }
+
 // counter-controled repetition
 int main(void) {
   int i;
@@ -10,7 +12,7 @@ int main(void) {
     printf("%d\n", i);
   }
 
-  printf("---------\n");
+  line_break();
 
   // --i works the same
   for (i = 5; i > 0; i--) {

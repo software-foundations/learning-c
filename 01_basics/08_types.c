@@ -16,6 +16,8 @@ int main(void) {
   printf("%f\n", var_float);
   printf("%.3f\n", var_float);
   printf("%.2lf\n", var_float);
+  printf("%5s\n", "hello");
+  printf("%15.4f\n", 123456789123456.1234);
 
   return 0;
 }

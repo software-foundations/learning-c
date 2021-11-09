@@ -70,6 +70,14 @@
 					"name": "format -> compile -> run (terminal)",
 					"shell_cmd": "clang-format \"$file\" > temp_file.c && cat temp_file.c > \"$file\" && rm temp_file.c && gcc -o \"${file_base_name}\" \"$file\" && \"./${file_base_name}\" && rm \"${file_base_name}\"",
 				},
+				/*
+				* -lm -> link math library
+				* https://askubuntu.com/questions/332884/how-to-compile-a-c-program-that-uses-math-h
+				*/
+				{					
+					"name": "(-lm) format -> compile -> run (terminal)",
+					"shell_cmd": "clang-format \"$file\" > temp_file.c && cat temp_file.c > \"$file\" && rm temp_file.c && gcc -o \"${file_base_name}\" \"$file\" -lm && \"./${file_base_name}\" && rm \"${file_base_name}\"",
+				},
 			],
 			"working_dir": "$file_path",
 		}	

@@ -2,10 +2,33 @@
 #include <stdio.h>
 
 int main(void) {
-  double x = 2;
-  double y = 5;
+  printf("sqrt(25) == %f\n\n", sqrt(25));
 
-  printf("x ^ y = %f", pow(x, y));
+  printf("2 ^ 5 == %f\n\n", pow(2, 5));
+
+  printf("log(2.718282) == %f\n\n", log(2.718282));
+
+  printf("log10(1.0) == %f\n\n", log10(1));
+
+  printf("fabs(-3) == %f\n\n", fabs(-3));
+
+  printf("ceil(3.1) == %f\n\n", ceil(3.1));
+
+  printf("floor(3.8) == %f\n\n", floor(3.8));
+
+  printf("fmod(5.1/3) == %f\n\n", fmod(5.1, 3));
+
+  /*
+  * sin (x)
+  * cos (x)
+  * sin (x)
+
+  where x is in radians
+  */
+
+  printf("sin(45) = %f\n\n", sin(45));
+  printf("cos(45) = %f\n\n", cos(45));
+  printf("tan(45) = %f\n\n", tan(45));
 
   return 0;
 }

@@ -1,5 +1,6 @@
 #include <math.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(void) {
   printf("sqrt(25) == %f\n\n", sqrt(25));
@@ -17,6 +18,11 @@ int main(void) {
   printf("floor(3.8) == %f\n\n", floor(3.8));
 
   printf("fmod(5.1/3) == %f\n\n", fmod(5.1, 3));
+
+  printf("rand() == %d\n\n", rand());
+  printf("rand() == %d\n\n", rand());
+  printf("rand() == %d\n\n", 1 + rand() % 6);
+  printf("rand() == %d\n\n", 1 + rand() % 6);
 
   /*
   * sin (x)
